@@ -60,6 +60,11 @@ type IngressControllerSpec struct {
 	// +optional
 	Domain string `json:"domain,omitempty"`
 
+	//This used to sync the configmap having customizable error code page created by cluster admin in openshift-config namespace.
+	//to openshift-ingress which will be used by the router to serve appropriate error code pages.
+	//If this field is empty, the default values i.e default shipped error code pages will be served by the haproxy router.
+	HttpErrorCodePage string `json:"httpErrorCodePage,omitempty"`
+
 	// replicas is the desired number of ingress controller replicas. If unset,
 	// defaults to 2.
 	//

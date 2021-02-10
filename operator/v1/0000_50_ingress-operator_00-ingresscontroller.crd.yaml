@@ -208,6 +208,13 @@ spec:
                 required:
                 - type
                 type: object
+              httpErrorCodePage:
+                description: This used to sync the configmap having customizable error
+                  code page created by cluster admin in openshift-config namespace.
+                  to openshift-ingress which will be used by the router to serve appropriate
+                  error code pages. If this field is empty, the default values i.e
+                  default shipped error code pages will be served by the haproxy router.
+                type: string
               httpHeaders:
                 description: "httpHeaders defines policy for HTTP headers. \n If this
                   field is empty, the default values are used."
